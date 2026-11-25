@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Inkcore privacy policy</title>
+  <meta name="description" content="What the Inkcore Android app does and does not do with your data.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<!--
+  DRAFT FOR THE OWNER. Before publishing, replace every [DEVELOPER NAME] and [CONTACT EMAIL] on this page and on support.html.
+  Written to match docs/release/data-safety-audit.md (2026-11-24). If the app changes (a server, analytics, sign-in, billing
+  changes), this page and the Play Data safety form must be re-checked. The purchases section describes the one-time unlock
+  that exists on the billing branch; publish it only together with that feature, or delete that section.
+-->
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="index.html">Inkcore</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="privacy.html" aria-current="page">Privacy</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <h1>Inkcore privacy policy</h1>
+    <p class="meta">Effective date: 2026-11-24. Applies to the Inkcore app for Android (package <code>app.inkcore.notation</code>) and to this website.</p>
+
+    <div class="card">
+      <h2 style="margin-top:0">In short</h2>
+      <ul>
+        <li>Inkcore does not send your scores, recordings or handwriting to us or to any server we run.</li>
+        <li>There are no accounts, no ads and no analytics in the app.</li>
+        <li>Your scores and settings are stored on your device. They leave it only when you choose: by exporting, sharing, printing, or syncing to another device on your Wi-Fi.</li>
+        <li>Syncing over Wi-Fi is not encrypted and not password-protected. Use it only on networks you trust.</li>
+        <li>Google handles purchases and Android may back up app data to your Google account. Details below.</li>
+      </ul>
+    </div>
+
+    <h2 id="who">Who we are</h2>
+    <p>Inkcore is published by [DEVELOPER NAME] (&ldquo;we&rdquo;). You can reach us at <strong>[CONTACT EMAIL]</strong> for any privacy question or request.</p>
+
+    <h2 id="stays">What stays on your device</h2>
+    <p>Everything you create or open in Inkcore is kept in the app&rsquo;s private storage on your device: scores, drafts, setlists, collections, saved versions, the &ldquo;Recently deleted&rdquo; folder, PDF charts you added, your settings, and a small practice history. The app does not upload any of it. It connects to no server of ours, because we do not run one for the app.</p>
+    <p>Android requires an &ldquo;internet&rdquo; permission for an app to use any network connection at all, including the Wi-Fi sync described below. Inkcore declares that permission for that reason. The app code itself makes no connection to the internet; the only internet-facing component is Google&rsquo;s purchase software described under &ldquo;Purchases&rdquo;.</p>
+
+    <h2 id="samples">Handwriting samples</h2>
+    <p>Inkcore has two optional tools that save your pen strokes to improve handwriting recognition. Both are local only.</p>
+    <ul>
+      <li><strong>&ldquo;Help improve handwriting recognition&rdquo;</strong> in the pen settings. It is off by default and the app asks you to confirm before it is turned on. While on, the notes and rests you write in Pen mode are saved to a file on your device: the raw pen strokes (position, pressure, tilt and timing), what the recognizer decided they were, and, when you correct a reading, what you chose instead. Each record also notes the operating system (&ldquo;android&rdquo;) and the time.</li>
+      <li><strong>&ldquo;Record ink samples&rdquo;</strong>, a screen where you write prompted symbols. It asks for your name or initials, which is stored with the samples and used in the exported file name.</li>
+    </ul>
+    <p>Nothing is uploaded. The samples leave your device only if you open the pen settings (or the record screen), choose export, and then pick where the file goes (the Android share sheet or &ldquo;Save as a file&rdquo;). If you send an exported file to us, for example by email, we receive that file and your email address. Turning the switch off stops new samples but does not delete the file; use &ldquo;Delete samples&rdquo; in the pen settings to remove it.</p>
+
+    <h2 id="mic">Microphone</h2>
+    <p>The microphone is used only by &ldquo;Record or sing a melody&rdquo;, which turns a one-line melody into notation. Android asks for microphone permission when you first start a recording, after the app explains why. The app listens only while you are recording, up to five minutes per take. The recording is held in the device&rsquo;s memory so you can play it back and transcribe it. It is written to a file only if you tap &ldquo;Save as .wav&rdquo;, and that file stays in Inkcore&rsquo;s private storage on your device. Audio is never uploaded by the app. You can withdraw the permission at any time in Android settings.</p>
+
+    <h2 id="wifi">Syncing over your Wi-Fi</h2>
+    <p>Inkcore has two features that connect your tablet to other devices on the same local network. They send data directly between devices, not through us. Neither is active unless you switch it on.</p>
+    <ul>
+      <li><strong>Library sync</strong> (the &ldquo;Sync library&rdquo; screen, with &ldquo;Make this device discoverable&rdquo;). While discoverable, the device announces itself to the local network about every second and a half with its device name (&ldquo;Inkcore device&rdquo; unless you rename it), a random identifier generated by the app, and a network port. When two devices sync, they exchange the list of their library files (names, sizes, dates and checksums) and then the files each is missing: your scores (<code>.mpz</code>), collections, setlists and setlist entries. PDF charts, saved versions, handwriting samples and logs are not part of sync.</li>
+      <li><strong>Reader sharing</strong> (sharing a score to readers from the score editor). While sharing, the device announces its name and the title of the chart. Readers who connect receive the whole current chart and the live playback position.</li>
+    </ul>
+    <p><strong>These connections are not encrypted and are not protected by a password or confirmation.</strong> Any device on the same network that is running Inkcore and can reach the port while you are discoverable or sharing could connect, and in library sync could receive or send library files. The device you are syncing with is chosen by you, but the app cannot verify who is on the other end. Turn these features on only on a network you trust (for example your own home network or a hotspot you control), and turn them off when you are done.</p>
+
+    <h2 id="files">Files you open, export, share and print</h2>
+    <p>You can import scores and other files (MusicXML, MIDI, PDF, photos, Inkcore files) using Android&rsquo;s file picker, by sharing a file to Inkcore, or by choosing &ldquo;Open with Inkcore&rdquo;. You can export scores, parts, PDFs and library backups using &ldquo;Save as&rdquo;, the Android share sheet, or Android&rsquo;s print dialog. When you export, share or print, Inkcore hands the file to the app, folder or print service you pick. From that point the file is handled by that app or service under its own privacy policy, not ours. We do not see what you choose.</p>
+
+    <h2 id="logs">Diagnostic and crash logs</h2>
+    <p>Inkcore keeps two kinds of log on your device, in its private storage. A crash log records unexpected errors and where in the program they happened. A diagnostic log records what happened in the app during recent sessions: app version, Android version, language and screen size, the screens and menu items you used, messages shown on screen, error messages, and the names of scores you saved, deleted or imported. The logs do not contain the contents of your scores. They are not sent anywhere. They leave your device only if you share them yourself, for example when we ask you to for a bug report. Because they can contain score names, read them before sending.</p>
+
+    <h2 id="purchases">Purchases</h2>
+    <p>Inkcore is free to use with a limit on the number of saved scores, and a one-time purchase removes the limit. Purchases are made and processed by Google Play. We never see your payment details; Google tells the app only whether you own the unlock. The app keeps a single unlocked/locked marker (a small file with a yes/no value and a time) on your device and asks Google Play again whenever the app starts or resumes.</p>
+    <p>The component Google provides to the app for this (the Google Play Billing Library) communicates with Google Play and may also send technical information about how purchases are working, and about your device, to Google. That information goes to Google, not to us, and is covered by Google&rsquo;s privacy policy. We do not control it and we do not receive it. It needs the Android permissions to check that you are online and to use Google Play billing.</p>
+
+    <h2 id="backup">Android backup</h2>
+    <p>Android has its own backup feature. If it is turned on in your device settings, Android may copy the app&rsquo;s private data, which can include your scores, handwriting samples, saved recordings, settings and logs, to the private backup area of your Google account. Google describes this backup as end-to-end encrypted on devices running Android 9 or later when a screen lock is set. This is done by Android and Google, not by the Inkcore app, and we cannot see the backup. You control it in your device&rsquo;s backup settings.</p>
+
+    <h2 id="notdo">What Inkcore does not do</h2>
+    <ul>
+      <li>It has no accounts and no sign-in, and it does not ask for your name, email address, phone number or contacts.</li>
+      <li>It shows no ads and contains no advertising software.</li>
+      <li>It contains no analytics, tracking or crash-reporting software of ours.</li>
+      <li>It does not use your location, camera or contacts, and it does not request storage permissions. It reads and writes only the files you choose.</li>
+      <li>We do not sell or share your data, because we do not have it.</li>
+    </ul>
+
+    <h2 id="permissions">Android permissions</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th scope="col">Permission</th><th scope="col">Why</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Internet (network access)</td><td>Needed by Android for the Wi-Fi sync features and for Google Play purchases. Inkcore does not contact a server of ours.</td></tr>
+          <tr><td>Microphone</td><td>Only for &ldquo;Record or sing a melody&rdquo;. Asked when you start a recording.</td></tr>
+          <tr><td>Google Play billing and network state</td><td>Added by Google&rsquo;s purchase component, to check your purchase and to see whether you are online.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="children">Children</h2>
+    <p>Inkcore is intended for people aged 13 and over and is not directed at children under 13. The app has no accounts and sends nothing about its users to us, so we do not knowingly collect personal information from anyone, including children. If you believe a child under 13 has sent us information, for example in an email, contact us at [CONTACT EMAIL] and we will delete it.</p>
+
+    <h2 id="choices">Your choices and deleting your data</h2>
+    <ul>
+      <li>Your data is on your device, so you can delete it there: delete scores in the app, use &ldquo;Delete samples&rdquo; in the pen settings, or clear the app&rsquo;s storage in Android settings.</li>
+      <li>Uninstalling Inkcore removes the app&rsquo;s data from your device. It does not remove files you exported or shared, or backups held in your Google account; manage those in the apps and accounts where they live.</li>
+      <li>If you emailed us, we hold that message and your email address. Ask at [CONTACT EMAIL] and we will delete it.</li>
+    </ul>
+
+    <h2 id="retention">How long we keep information</h2>
+    <p>We do not hold app data about you. If you contact us, we keep your message and any file you attached only as long as needed to answer you and fix the problem, and delete it on request.</p>
+
+    <h2 id="changes">Changes to this policy</h2>
+    <p>When this policy changes, the effective date at the top of this page changes with it. If a change affects what happens to your data (for example, if the app ever starts sending data off your device), we will say so in the Google Play release notes for that version and, where practical, inside the app before it takes effect.</p>
+
+    <h2 id="contact">Contact</h2>
+    <p>[DEVELOPER NAME]<br>Email: [CONTACT EMAIL]</p>
+    <p>For help with the app rather than privacy, see <a href="support.html">support</a>.</p>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="privacy.html">Privacy policy</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
