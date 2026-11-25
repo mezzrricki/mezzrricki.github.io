@@ -1,6 +1,6 @@
-# Inkcore site (`/inkcore/`)
+# InkCore site (`/inkcore/`)
 
-Static website for **Inkcore**, a pen-first music notation app for Android tablets: a home page, a privacy policy and a support page.
+Static website for **InkCore**, a pen-first music notation app for Android tablets: a home page, a privacy policy and a support page.
 Plain HTML and one CSS file. No JavaScript, no trackers, no external fonts, scripts or CDNs. All links are relative, so the folder works
 at `https://mezzrricki.github.io/inkcore/`, from another path, or straight from disk (`file://`).
 
@@ -8,11 +8,11 @@ at `https://mezzrricki.github.io/inkcore/`, from another path, or straight from 
 
 | File | What it is |
 |---|---|
-| `index.html` | Home page: what Inkcore is, status ("in testing on Android tablets"), links to privacy and support |
+| `index.html` | Home page: what InkCore is, status ("in testing on Android tablets"), links to privacy and support |
 | `privacy.html` | Plain-English privacy policy, effective 2026-11-24, matching `docs/release/data-safety-audit.md` in the app repo |
 | `support.html` | How to get help and how to report a bug |
 | `style.css` | The only stylesheet (system fonts, light and dark through `prefers-color-scheme`) |
-| `assets/images/` | All Inkcore images go here (see "Images") |
+| `assets/images/` | All InkCore images go here (see "Images") |
 
 ## Before publishing: fill in the placeholders
 
@@ -93,7 +93,7 @@ Ways to do it, best first:
 **What does not redirect.** The Play Console privacy URL and the link inside the app should use the **real address**,
 `https://mezzrricki.github.io/inkcore/privacy.html`, so they never depend on the forwarder working.
 
-**An alternative worth considering.** Put the Inkcore site in its **own repository** (for example `mezzrricki/inkcore`) and attach
+**An alternative worth considering.** Put the InkCore site in its **own repository** (for example `mezzrricki/inkcore`) and attach
 `inkcore.app` to that repository. GitHub then serves `https://inkcore.app/` directly with its own certificate (no forwarder, real deep
 links), and `https://mezzrricki.github.io/inkcore` redirects to it automatically (standard GitHub behaviour for project sites with a
 custom domain; UNVERIFIED here). This repository stays free for other apps, each in its own repository. The records for that setup are
