@@ -15,7 +15,10 @@
 <!--
   Contact details (Daniel Mezynski, dan@mezyn.ski) were filled in on 2026-11-24; keep privacy.html and support.html in step.
   Written to match docs/release/data-safety-audit.md (2026-11-24). If the app changes (a server, analytics, sign-in, billing
-  changes), this page and the Play Data safety form must be re-checked. The purchases section describes the one-time unlock
+  changes), this page and the Play Data safety form must be re-checked.
+  2026-11-25: applied docs/release/privacy-site-changes.md Part A (Wi-Fi pairing code, accept prompt, join code, backup rules,
+  new handwriting label) and Part B (Google Drive sync, build 6). Control names quoted here ("Sync now", "Save handwriting
+  samples on this device", the sync settings) were written before the final screens; check them against build 6. The purchases section describes the one-time unlock
   that exists on the billing branch; publish it only together with that feature, or delete that section.
 -->
 <body>
@@ -37,15 +40,16 @@
 
   <main id="main" class="wrap">
     <h1>InkCore privacy policy</h1>
-    <p class="meta">Effective date: 2026-11-24. Applies to the InkCore app for Android (package <code>app.inkcore.notation</code>) and to this website.</p>
+    <p class="meta">Last updated and effective: 2026-11-25 (first published 2026-11-24). Applies to the InkCore app for Android (package <code>app.inkcore.notation</code>) and to this website.</p>
+    <p>Using InkCore is also covered by our <a href="terms.html">Terms of use</a>.</p>
 
     <div class="card">
       <h2 style="margin-top:0">In short</h2>
       <ul>
         <li>InkCore does not send your scores, recordings or handwriting to us or to any server we run.</li>
-        <li>There are no accounts, no ads and no analytics in the app.</li>
-        <li>Your scores and settings are stored on your device. They leave it only when you choose: by exporting, sharing, printing, or syncing to another device on your Wi-Fi.</li>
-        <li>Syncing over Wi-Fi is not encrypted and not password-protected. Use it only on networks you trust.</li>
+        <li>There are no InkCore accounts, no ads and no analytics in the app. If you turn on Google Drive sync, you sign in with your own Google account.</li>
+        <li>Your scores and settings are stored on your device. They leave it only when you choose: by exporting, sharing, printing, syncing to another device on your Wi-Fi, or syncing with your own Google Drive.</li>
+        <li>Syncing over Wi-Fi needs a code and your confirmation on the receiving device, but it is not encrypted. Use it only on networks you trust.</li>
         <li>Google handles purchases and Android may back up app data to your Google account. Details below.</li>
       </ul>
     </div>
@@ -54,13 +58,13 @@
     <p>InkCore is published by Daniel Mezynski (&ldquo;we&rdquo;). You can reach us at <a href="mailto:dan@mezyn.ski">dan@mezyn.ski</a> for any privacy question or request.</p>
 
     <h2 id="stays">What stays on your device</h2>
-    <p>Everything you create or open in InkCore is kept in the app&rsquo;s private storage on your device: scores, drafts, setlists, collections, saved versions, the &ldquo;Recently deleted&rdquo; folder, PDF charts you added, your settings, and a small practice history. The app does not upload any of it. It connects to no server of ours, because we do not run one for the app.</p>
-    <p>Android requires an &ldquo;internet&rdquo; permission for an app to use any network connection at all, including the Wi-Fi sync described below. InkCore declares that permission for that reason. The app code itself makes no connection to the internet; the only internet-facing component is Google&rsquo;s purchase software described under &ldquo;Purchases&rdquo;.</p>
+    <p>Everything you create or open in InkCore is kept in the app&rsquo;s private storage on your device: scores, drafts, setlists, collections, saved versions, the &ldquo;Recently deleted&rdquo; folder, PDF charts you added, your settings, and a small practice history. The app does not upload any of it unless you turn on Google Drive sync (below). It connects to no server of ours, because we do not run one for the app.</p>
+    <p>Android requires an &ldquo;internet&rdquo; permission for an app to use any network connection at all, including the Wi-Fi sync described below. InkCore declares that permission for that reason. The app connects to the internet only for Google Play purchases (see &ldquo;Purchases&rdquo;) and, if you turn it on, Google Drive sync (see &ldquo;Google Drive sync&rdquo;). Both connect only to Google.</p>
 
     <h2 id="samples">Handwriting samples</h2>
-    <p>InkCore has two optional tools that save your pen strokes to improve handwriting recognition. Both are local only.</p>
+    <p>InkCore has two optional tools that save your pen strokes on your device. Both are local only.</p>
     <ul>
-      <li><strong>&ldquo;Help improve handwriting recognition&rdquo;</strong> in the pen settings. It is off by default and the app asks you to confirm before it is turned on. While on, the notes and rests you write in Pen mode are saved to a file on your device: the raw pen strokes (position, pressure, tilt and timing), what the recognizer decided they were, and, when you correct a reading, what you chose instead. Each record also notes the operating system (&ldquo;android&rdquo;) and the time.</li>
+      <li><strong>&ldquo;Save handwriting samples on this device&rdquo;</strong> in the pen settings (the switch reads &ldquo;Stop saving handwriting samples&rdquo; while it is on). It is off by default and the app asks you to confirm before it is turned on. While on, the notes and rests you write in Pen mode are saved to a file on your device: the raw pen strokes (position, pressure, tilt and timing), what the recognizer decided they were, and, when you correct a reading, what you chose instead. Each record also notes the operating system (&ldquo;android&rdquo;) and the time.</li>
       <li><strong>&ldquo;Record ink samples&rdquo;</strong>, a screen where you write prompted symbols. It asks for your name or initials, which is stored with the samples and used in the exported file name.</li>
     </ul>
     <p>Nothing is uploaded. The samples leave your device only if you open the pen settings (or the record screen), choose export, and then pick where the file goes (the Android share sheet or &ldquo;Save as a file&rdquo;). If you send an exported file to us, for example by email, we receive that file and your email address. Turning the switch off stops new samples but does not delete the file; use &ldquo;Delete samples&rdquo; in the pen settings to remove it.</p>
@@ -71,10 +75,19 @@
     <h2 id="wifi">Syncing over your Wi-Fi</h2>
     <p>InkCore has two features that connect your tablet to other devices on the same local network. They send data directly between devices, not through us. Neither is active unless you switch it on.</p>
     <ul>
-      <li><strong>Library sync</strong> (the &ldquo;Sync library&rdquo; screen, with &ldquo;Make this device discoverable&rdquo;). While discoverable, the device announces itself to the local network about every second and a half with its device name (&ldquo;InkCore device&rdquo; unless you rename it), a random identifier generated by the app, and a network port. When two devices sync, they exchange the list of their library files (names, sizes, dates and checksums) and then the files each is missing: your scores (<code>.mpz</code>), collections, setlists and setlist entries. PDF charts, saved versions, handwriting samples and logs are not part of sync.</li>
-      <li><strong>Reader sharing</strong> (sharing a score to readers from the score editor). While sharing, the device announces its name and the title of the chart. Readers who connect receive the whole current chart and the live playback position.</li>
+      <li><strong>Library sync</strong> (the &ldquo;Sync library&rdquo; screen, with &ldquo;Make this device discoverable&rdquo;). While discoverable, the device announces itself to the local network about every second and a half with its device name (&ldquo;InkCore device&rdquo; unless you rename it), a network port and a note that a code is needed. It does not announce any identifier. To sync, the other device must type a six-digit pairing code shown on the discoverable device, and you must tap Accept there, before anything is exchanged. Too many wrong codes lock the other device out for a few minutes, and the app makes a new code each time you switch discoverable on. When two devices sync, they exchange the list of their library files (names, sizes, dates and checksums) and then the files each is missing: your scores (<code>.mpz</code>), collections, setlists and setlist entries. PDF charts, saved versions, handwriting samples and logs are not part of sync.</li>
+      <li><strong>Reader sharing</strong> (sharing a score to readers from the score editor). While sharing, the device announces its name and that a join code is needed. It does not announce the chart title. A reader must type the six-digit join code shown on the sharing device; only then does it receive the whole current chart and the live playback position.</li>
     </ul>
-    <p><strong>These connections are not encrypted and are not protected by a password or confirmation.</strong> Any device on the same network that is running InkCore and can reach the port while you are discoverable or sharing could connect, and in library sync could receive or send library files. The device you are syncing with is chosen by you, but the app cannot verify who is on the other end. Turn these features on only on a network you trust (for example your own home network or a hotspot you control), and turn them off when you are done.</p>
+    <p><strong>These connections are protected by a code, and library sync also needs your confirmation on the receiving device, but they are not encrypted.</strong> The code and the files travel over the network in the clear, so someone who can already watch traffic on your Wi-Fi network could read them. A device that does not know the code cannot connect, and repeated wrong codes lock it out for a few minutes. Turn these features on only on a network you trust (for example your own home network or a hotspot you control), and turn them off when you are done. Versions of InkCore from before this protection cannot sync with newer versions; update both devices.</p>
+
+    <h2 id="drive">Google Drive sync</h2>
+    <p>Google Drive sync keeps your InkCore library in step across your devices by storing it in your own Google Drive. It is available in the Android app, is off until you turn it on, and you can turn it off or disconnect at any time.</p>
+    <p><em>What InkCore can access.</em> When you connect, Google asks you to let InkCore use one permission: access to the Google Drive files that InkCore itself creates (Google&rsquo;s &ldquo;drive.file&rdquo; permission). InkCore cannot see, open or change any other file in your Drive. InkCore also receives your Google account&rsquo;s email address and an account identifier, which it stores on your device only, to show which account is connected and to reconnect without asking again.</p>
+    <p><em>What it does with it.</em> InkCore creates a folder called &ldquo;InkCore&rdquo; in your My Drive, with a &ldquo;PDF charts&rdquo; folder inside it, and keeps copies of your scores, collections, setlists and imported PDF charts there. It reads those files back to bring changes from your other devices onto this one. Saved versions of scores, handwriting samples and your settings are not synced. You choose when it runs: never (Off), only when you tap &ldquo;Sync now&rdquo;, or automatically while the app is open (when you open or return to it, and about a minute after you change something). It never runs in the background.</p>
+    <p><em>Where your data goes.</em> Directly between your device and Google Drive, over an encrypted connection. InkCore has no server: we never receive your files, your Google account details or your sign-in. The files in your Drive are held by Google under your Google account and Google&rsquo;s own terms and privacy policy, and count towards your Drive storage. You can see, download or delete them in Google Drive like any other files.</p>
+    <p><em>Deleting.</em> When you delete a score in InkCore, its copy in your Drive is moved to Google Drive&rsquo;s trash, and your other connected devices move their copy to InkCore&rsquo;s &ldquo;Recently deleted&rdquo;. If the same score was changed on two devices, InkCore keeps both versions. Disconnecting does not delete anything in your Drive or on your device. To remove the synced files, delete the &ldquo;InkCore&rdquo; folder in Google Drive.</p>
+    <p><em>Disconnecting and removing access.</em> In InkCore, disconnect Google Drive in the sync settings: the app signs out of your Google account on this device, forgets the account, and, where possible, also withdraws InkCore&rsquo;s access at Google. You can always withdraw access yourself in your Google Account: open the page that lists apps linked to your account (myaccount.google.com/linkedapps), choose InkCore and remove its access. After that InkCore cannot reach your Drive until you connect again.</p>
+    <p><em>Google&rsquo;s rules.</em> InkCore&rsquo;s use of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes">Limited Use requirements</a>. InkCore uses Google Drive data only to provide the sync you see in the app; it does not use it for advertising, does not sell or transfer it, and does not use it to train AI models, and no person at InkCore reads it.</p>
 
     <h2 id="files">Files you open, export, share and print</h2>
     <p>You can import scores and other files (MusicXML, MIDI, PDF, photos, InkCore files) using Android&rsquo;s file picker, by sharing a file to InkCore, or by choosing &ldquo;Open with InkCore&rdquo;. You can export scores, parts, PDFs and library backups using &ldquo;Save as&rdquo;, the Android share sheet, or Android&rsquo;s print dialog. When you export, share or print, InkCore hands the file to the app, folder or print service you pick. From that point the file is handled by that app or service under its own privacy policy, not ours. We do not see what you choose.</p>
@@ -87,11 +100,11 @@
     <p>The component Google provides to the app for this (the Google Play Billing Library) communicates with Google Play and may also send technical information about how purchases are working, and about your device, to Google. That information goes to Google, not to us, and is covered by Google&rsquo;s privacy policy. We do not control it and we do not receive it. It needs the Android permissions to check that you are online and to use Google Play billing.</p>
 
     <h2 id="backup">Android backup</h2>
-    <p>Android has its own backup feature. If it is turned on in your device settings, Android may copy the app&rsquo;s private data, which can include your scores, handwriting samples, saved recordings, settings and logs, to the private backup area of your Google account. Google describes this backup as end-to-end encrypted on devices running Android 9 or later when a screen lock is set. This is done by Android and Google, not by the InkCore app, and we cannot see the backup. You control it in your device&rsquo;s backup settings.</p>
+    <p>Android has its own backup feature. If it is turned on in your device settings, Android may copy the app&rsquo;s private data, which can include your scores, setlists, handwriting samples, saved recordings, settings and the marker that records your purchase, to the private backup area of your Google account. InkCore asks Android to leave out its instrument sound files (they come with the app) and its diagnostic and crash logs. Google describes this backup as end-to-end encrypted on devices running Android 9 or later when a screen lock is set. This is done by Android and Google, not by the InkCore app, and we cannot see the backup. You control it in your device&rsquo;s backup settings.</p>
 
     <h2 id="notdo">What InkCore does not do</h2>
     <ul>
-      <li>It has no accounts and no sign-in, and it does not ask for your name, email address, phone number or contacts.</li>
+      <li>It has no InkCore accounts. The only sign-in is the optional Google sign-in for Google Drive sync, and that goes to Google, not to us. It does not ask for your name, phone number or contacts.</li>
       <li>It shows no ads and contains no advertising software.</li>
       <li>It contains no analytics, tracking or crash-reporting software of ours.</li>
       <li>It does not use your location, camera or contacts, and it does not request storage permissions. It reads and writes only the files you choose.</li>
@@ -105,20 +118,22 @@
           <tr><th scope="col">Permission</th><th scope="col">Why</th></tr>
         </thead>
         <tbody>
-          <tr><td>Internet (network access)</td><td>Needed by Android for the Wi-Fi sync features and for Google Play purchases. InkCore does not contact a server of ours.</td></tr>
+          <tr><td>Internet (network access)</td><td>Needed by Android for the Wi-Fi sync features, Google Drive sync and Google Play purchases. InkCore does not contact a server of ours.</td></tr>
           <tr><td>Microphone</td><td>Only for &ldquo;Record or sing a melody&rdquo;. Asked when you start a recording.</td></tr>
           <tr><td>Google Play billing and network state</td><td>Added by Google&rsquo;s purchase component, to check your purchase and to see whether you are online.</td></tr>
+          <tr><td>Biometric and fingerprint (<code>USE_BIOMETRIC</code>, <code>USE_FINGERPRINT</code>)</td><td>Added by Google&rsquo;s sign-in component used for Google Drive sync. InkCore does not use your fingerprint, face or other biometrics, and Android does not ask you for these permissions.</td></tr>
         </tbody>
       </table>
     </div>
 
     <h2 id="children">Children</h2>
-    <p>InkCore is intended for people aged 13 and over and is not directed at children under 13. The app has no accounts and sends nothing about its users to us, so we do not knowingly collect personal information from anyone, including children. If you believe a child under 13 has sent us information, for example in an email, contact us at <a href="mailto:dan@mezyn.ski">dan@mezyn.ski</a> and we will delete it.</p>
+    <p>InkCore is intended for people aged 13 and over and is not directed at children under 13. The app has no InkCore accounts and sends nothing about its users to us, so we do not knowingly collect personal information from anyone, including children. If you believe a child under 13 has sent us information, for example in an email, contact us at <a href="mailto:dan@mezyn.ski">dan@mezyn.ski</a> and we will delete it.</p>
 
     <h2 id="choices">Your choices and deleting your data</h2>
     <ul>
       <li>Your data is on your device, so you can delete it there: delete scores in the app, use &ldquo;Delete samples&rdquo; in the pen settings, or clear the app&rsquo;s storage in Android settings.</li>
-      <li>Uninstalling InkCore removes the app&rsquo;s data from your device. It does not remove files you exported or shared, or backups held in your Google account; manage those in the apps and accounts where they live.</li>
+      <li>If you use Google Drive sync, copies of your library are also in the &ldquo;InkCore&rdquo; folder in your Google Drive. Delete that folder in Google Drive to remove them, and remove InkCore&rsquo;s access in your Google Account (see <a href="#drive">&ldquo;Google Drive sync&rdquo;</a>). Uninstalling InkCore does not remove files from your Drive.</li>
+      <li>Uninstalling InkCore removes the app&rsquo;s data from your device. It does not remove files you exported or shared, backups held in your Google account, or the files Google Drive sync put in your Drive; manage those in the apps and accounts where they live.</li>
       <li>If you emailed us, we hold that message and your email address. Ask at <a href="mailto:dan@mezyn.ski">dan@mezyn.ski</a> and we will delete it.</li>
     </ul>
 
