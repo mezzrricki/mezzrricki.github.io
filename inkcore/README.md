@@ -10,6 +10,7 @@ at `https://mezzrricki.github.io/inkcore/`, from another path, or straight from 
 |---|---|
 | `index.html` | Home page: what InkCore is, status ("in testing on Android tablets"), links to privacy and support |
 | `privacy.html` | Plain-English privacy policy, effective 2026-11-24, matching `docs/release/data-safety-audit.md` in the app repo |
+| `terms.html` | Terms of use (AI draft from `docs/release/terms-of-use.md`, effective 2026-11-24, Massachusetts law; lawyer review pending, see the comment at the top). GitHub Pages also serves it at `/inkcore/terms`, the target of `inkcore.app/terms` |
 | `support.html` | How to get help and how to report a bug |
 | `style.css` | The only stylesheet (system fonts, light and dark through `prefers-color-scheme`) |
 | `assets/images/` | All InkCore images go here (see "Images") |
